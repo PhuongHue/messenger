@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>chats</title>
+  <link rel="stylesheet" href="/public/main.css">
+</head>
+
+<body>
+  <div class="mario-chat">
+    <div class="chat-window">
+      <div class="output" id="output">
+        <% messages.map(msg => { %>
+        <p><strong><%= msg.name %>: </strong><%= msg.message %></p>
+        <% }); %>
+      </div>
+      <div id="feedback"></div>
+    </div>
+    <div class="input-container">
+      <input type="text" id="name" placeholder="Name">
+      <div class="input-wrap">
+        <input type="text" id="message" placeholder="Message">
+        <button id="send"><i class="fas fa-paper-plane"></i></button>
+      </div>
+    </div>
+
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="/public/main.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</body>
+
+</html>
