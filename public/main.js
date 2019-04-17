@@ -16,8 +16,8 @@ const message = document.querySelector('#message'),
             handle: handle.value
           });
         } else {
-          if(message.value != '') alert('Bạn phải nhập tin nhắn!')
-          if(handle.value != '') alert('Bạn phải nhập tên!')
+          if(message.value != '') alert('Bạn phải nhập tên!')
+          if(handle.value != '') alert('Bạn phải nhập tin nhắn!')
         }
         message.value = '';
       });
