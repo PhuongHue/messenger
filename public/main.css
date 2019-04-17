@@ -31,8 +31,7 @@ h2 {
     width: 70%;
     height: 100%;
     margin: 30px auto;
-    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.05);
-    border-radius: 2px;
+   border-radius: 2px;
     display: flex;
     flex-direction: column;
 }
@@ -46,6 +45,7 @@ h2 {
     padding: 12px 0;
     margin-bottom: 15px;
     border-radius: 10px;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .chat-window::-webkit-scrollbar {
@@ -75,6 +75,21 @@ label {
     box-sizing: border-box;
     display: block;
     padding: 10px 20px;
+}
+.typing{
+    color: #000000;
+    animation: load 1s ease;
+}
+@keyframes load{
+    0%{
+        color: #000000;
+    }
+    50%{
+        color: #ffffff;
+    }
+    100%{
+        color: #000000;
+    }
 }
 
 .input-container {

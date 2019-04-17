@@ -10,12 +10,14 @@ app.set('view engine', 'ejs');
 
 const Chat = require('./models/Chat');
 
+//web site
 app.get('/', (req, res) => {
   Chat.find({}).then(messages => {
     res.render('index', {messages});
   }).catch(err => console.error(err));
 });
 
+//Socket.io server
 io.on('connection', socket => {
   socket.on('chat', data => {
     Chat.create({name: data.handle, message: data.message}).then(() => {
@@ -27,7 +29,7 @@ io.on('connection', socket => {
   });
 });
 
-// listen
+// web
 http.listen(process.env.PORT || 3000, () => {
   console.log('Running');
 });
