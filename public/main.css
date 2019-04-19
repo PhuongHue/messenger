@@ -21,7 +21,9 @@ h2 {
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
 }
-
+#feedback{
+    margin: 0 20px;
+}
 .mario-chat {
     display: flex;
     flex-direction: column;
@@ -82,13 +84,13 @@ label {
 }
 @keyframes load{
     0%{
-        color: #000000;
-    }
-    50%{
         color: #ffffff;
     }
-    100%{
+    50%{
         color: #000000;
+    }
+    100%{
+        color: #ffffff;
     }
 }
 
