@@ -23,8 +23,21 @@ btn.addEventListener('click', () => {
 });
 
 // gửi sự kiện typing
-message.addEventListener('keypress', () => {
+message.addEventListener('keypress', (e) => {
   socket.emit('typing', handle.value);
+  if(e.key == 'Enter') {
+    if (message.value != '' && handle.value != '') {
+      socket.emit('chat', {
+        message: message.value,
+        handle: handle.value
+      });
+    } else {
+      if (message.value != '') alert('Bạn phải nhập tên!')
+      if (handle.value != '') alert('Bạn phải nhập tin nhắn!')
+    }
+    message.value = '';
+  }
+
 });
 
 socket.on('chat', data => {
